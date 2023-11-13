@@ -1,0 +1,620 @@
+@font-face {
+    font-family: Feedback;
+    src: url(../fonts/FeedBackdafon.otf);
+}
+
+@font-face {
+    font-family: Cubadak;
+    src: url(../fonts/Cubadak.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Feedback;
+}
+
+video {
+    /** Simulationg background-size: cover */
+    object-fit: cover;
+    height: 100%;
+    width: 100%; 
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.video-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    /* Will not allow the video to overflow the 
+    container */
+    overflow: hidden;  
+    /* Centering the container's content vertically 
+    and horizontally */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding:  20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    object-fit: contain;
+    height: 80px;
+    margin-left: 5px;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 25px;
+    color: #EAE1DF;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #EAE1DF;
+    border-radius: 5px;
+    left: 0;
+    bottom: -6px;
+    transform: scaleX(0);
+    transition: transform .5s;
+    transform-origin: right;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #EAE1DF;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 25px;
+    color: #EAE1DF;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation .btnLogin-popup:hover {
+    background-color: #EAE1DF;
+    color: #444140;
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform .5s ease, height .2s ease ;
+    transform: scale(0);
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
+}
+
+.wrapper.active {
+    height: 520px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #1D1E18;
+    font-size: 2em;
+    color: #12BA7C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.form-box h2 {
+    font-size: 40px;
+    color: #1D1E18;
+    text-align: center;
+    font-family: Cubadak;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #1D1E18;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #1D1E18;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #1D1E18;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #12BA7C;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: 20px;
+    color: #1D1E18;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #1D1E18;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #1D1E18;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #1D1E18;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 25px;
+    color: #EAE1DF;
+    font-weight: 500;
+}
+
+.btn-reg {
+    width: 100%;
+    height: 45px;
+    background: rgb(119, 0, 0);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor:not-allowed;
+    font-size: 25px;
+    color: #EAE1DF;
+    font-weight: 500;
+}
+
+.login-register {
+    font-size: 20px;
+    color: #1D1E18;
+    text-align: center;
+    font-weight: 500;
+    margin: 25PX 0 10PX;
+}
+
+.login-register p a {
+    color: #1D1E18;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+/** Login Stuff End */
+/** Home Section */
+.home {
+    position: absolute;
+    width: 90%;
+    height: 80vh;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s ease, height .2s ease ;
+    transform: scale(0);
+}
+
+.home.active {
+    transform: scale(1);
+}
+
+.home .icon-close-home {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #1D1E18;
+    font-size: 2em;
+    color: #12BA7C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.home-info h2 {
+    position: relative;
+    font-size: 40px;
+    color: #1D1E18;
+    text-align: center;
+    font-family: Cubadak;
+    margin-bottom: 20px;
+}
+
+.home-info h3 {
+    font-size: 30px;
+    font-family: Cubadak;
+}
+
+.home-body p {
+    position: relative;
+    text-align: left;
+    font-size: 20px;
+}
+
+.home-left {
+    text-align: left;
+    margin-right: 800px;
+}
+
+.home-right {
+    text-align: right;
+    margin-left: 800px;
+}
+
+/** Home End */
+/** About Start */
+.about {
+    position: absolute;
+    width: 45%;
+    height: 70vh;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s ease, height .2s ease ;
+    transform: scale(0);
+}
+
+.about.active {
+    transform: scale(1);
+}
+
+.about .icon-close-abt {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #1D1E18;
+    font-size: 2em;
+    color: #12BA7C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.about-body {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.about-info h2 {
+    position: relative;
+    font-size: 40px;
+    color: #1E1A1D;
+    text-align: center;
+    font-family: Cubadak;
+    margin-bottom: 40px;
+}
+
+
+/** About End */
+/** Staff Start */
+.staff {
+    position: absolute;
+    width: 60%;
+    height: 60vh;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s ease, height .2s ease ;
+    transform: scale(0);
+}
+
+.staff-info h2 {
+    position: relative;
+    font-size: 40px;
+    color: #1D1E18;
+    text-align: center;
+    font-family: Cubadak;
+    margin-bottom: 40px;
+}
+
+.staff.active {
+    transform: scale(1);
+}
+
+.staff-body {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.staff .icon-close-staff {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #1D1E18;
+    font-size: 2em;
+    color: #12BA7C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.profile-card {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: #444140;
+    padding: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #000000;
+    transition: .6s;
+    margin: 0 40px;
+}
+
+.profile-card .profile-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: .6s;
+}
+
+.profile-card:hover .profile-img {
+    transform: translateY(-60px);
+}
+
+.profile-img img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #000000;
+    transition: .6s;
+    z-index: 80;
+}
+
+.profile-card:hover {
+    border-radius: 10px;
+    height: 290px;
+}
+
+.profile-card:hover img {
+    border-radius: 10px;
+}
+
+.caption {
+    text-align: center;
+    transform: translateY(-80px);
+    opacity: 0;
+    transition: .6s;
+    font-family: Feedback;
+}
+
+.profile-card:hover .caption {
+    opacity: 1;
+}
+
+.caption h3 {
+    font-size: 21px;
+    color: #EAE1DF;
+    font-family: Cubadak;
+}
+
+.caption p {
+    font-size: 17px;
+    color: #EAE1DF;
+    margin: 2px 0 6px 0;
+}
+
+.caption .social-links a {
+    color: #EAE1DF;
+    margin-right: 8px;
+    font-size: 18px;
+    transition: .6s;
+}
+
+.social-links a:hover {
+    color: #12BA7C;
+}
+/** Staff End */
+/** Partners Start */
+.partners {
+    position: absolute;
+    width: 45%;
+    height: 70vh;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s ease, height .2s ease ;
+    transform: scale(0);
+}
+
+.partners.active {
+    transform: scale(1);
+}
+
+.partners .icon-close-part {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #1D1E18;
+    font-size: 2em;
+    color: #12BA7C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.partners-body {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.partners-info h2 {
+    position: relative;
+    font-size: 40px;
+    color: #1E1A1D;
+    text-align: center;
+    font-family: Cubadak;
+    margin-bottom: 40px;
+}
+/** Partners End */

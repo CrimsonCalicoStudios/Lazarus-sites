@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eden's Gate || Login</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img//favicon-16x16.png">
+    <link rel="manifest" href="./assets/img//site.webmanifest">
+</head>
+<body>
+    <div class="video-wrapper">
+        <video playsinline autoplay muted loop>
+            <source src="./assets/img/background.mov" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </div> 
+    <header>
+        <img src="./assets/img/logo-test.png" alt="" class="logo">
+        <nav class="navigation">
+            <a href="#" class="sect-popup-h">Home</a>
+            <a class="sect-popup-a">About</a>
+            <a class="sect-popup-s">Staff</a>
+            <a class="sect-popup-p">Partners</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-open"></ion-icon></span>
+                    <input type="email" required id="email">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required id="password">
+                    <label for="password">Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label for=""><span class="checkmark"></span><input type="checkbox" name="" id="">Remember me</label>
+                    <a href="">Forgot Password?</a>
+                </div>
+                <button type="submit" value="Login" onclick="auth()" class="btn">login</button>
+                <div class="login-register">
+                    <p>Dont have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-open"></ion-icon></span>
+                    <input type="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label for=""><input type="checkbox" name="" id="">I agree to the Terms & Conditions</label>
+                </div>
+                <button type="submit" class="btn-reg" title="Servers Currently Unavailable"><s>Register</s></button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="home">
+        <span class="icon-close-home"><ion-icon name="close"></ion-icon></span>
+        <div class="home-info">
+            <h2>Welcome to <span style="font-family: Cubadak; color: #12BA7C;">Eden's Gate</span></h2>
+            <div class="home-body">
+                <div class="home-left">
+                    <h3>test1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates harum ipsam nulla ducimus omnis veniam dolorum, <br>quisquam quae eligendi odio quibusdam, voluptatum, mollitia quos! Explicabo suscipit libero vitae hic recusandae!</p>
+                </div>
+                <div class="home-right">
+                    <h3>test</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates harum ipsam nulla ducimus omnis veniam dolorum, <br>quisquam quae eligendi odio quibusdam, voluptatum, mollitia quos! Explicabo suscipit libero vitae hic recusandae!</p>
+                </div>
+                <div class="home-left">
+                    <h3>test1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates harum ipsam nulla ducimus omnis veniam dolorum, <br>quisquam quae eligendi odio quibusdam, voluptatum, mollitia quos! Explicabo suscipit libero vitae hic recusandae!</p>
+                </div>
+                <div class="home-right">
+                    <h3>test</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates harum ipsam nulla ducimus omnis veniam dolorum, <br>quisquam quae eligendi odio quibusdam, voluptatum, mollitia quos! Explicabo suscipit libero vitae hic recusandae!</p>
+                </div>
+                <div class="home-left">
+                    <h3>test1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates harum ipsam nulla ducimus omnis veniam dolorum, <br>quisquam quae eligendi odio quibusdam, voluptatum, mollitia quos! Explicabo suscipit libero vitae hic recusandae!</p>
+                </div>
+                <div class="home-right">
+                    <h3>test</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates harum ipsam nulla ducimus omnis veniam dolorum, <br>quisquam quae eligendi odio quibusdam, voluptatum, mollitia quos! Explicabo suscipit libero vitae hic recusandae!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about">
+        <span class="icon-close-abt"><ion-icon name="close"></ion-icon></span>
+        <div class="about-info">
+            <h2>Who we are<span style="color: #12BA7C; font-family: Cubadak;">?</span></h2>
+            <div class="about-body">
+
+            </div>
+        </div>
+    </div>
+    <div class="staff">
+        <span class="icon-close-staff"><ion-icon name="close"></ion-icon></span>
+        <div class="staff-info">
+            <h2>The faces you'll get to know<span style="color: #12BA7C; font-family: Cubadak;">:</span></h2>
+            <div class="staff-body">
+                <div class="profile-card">
+                    <div class="profile-img">
+                        <img src="./assets/img/pfp.jpg" alt="">
+                    </div>
+                    <div class="caption">
+                        <h3>Cali</h3>
+                        <p>CEO</p>
+                        <p>"The truth is hidden in the console of life"</p>
+                        <div class="social-links">
+                            <a href="https://twitch.tv/crimsoncalico"><ion-icon name="logo-Twitch"></ion-icon></a>
+                            <a href="https://instagram.com/crimsoncalico"><ion-icon name="logo-instagram"></ion-icon></a>
+                            <a href="https://twitter.com/crimsoncalico"><ion-icon name="logo-twitter"></ion-icon></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-img">
+                        <img src="./assets/img/profile.png" alt="">
+                    </div>
+                    <div class="caption">
+                        <h3>Name</h3>
+                        <p>Title</p>
+                        <p>Quote</p>
+                        <div class="social-links">
+                            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-img">
+                        <img src="./assets/img/profile.png" alt="">
+                    </div>
+                    <div class="caption">
+                        <h3>Name</h3>
+                        <p>Title</p>
+                        <p>Quote</p>
+                        <div class="social-links">
+                            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+    <div class="partners">
+        <span class="icon-close-part"><ion-icon name="close"></ion-icon></span>
+        <div class="partners-info">
+            <h2>Meet our partners<span style="color: #12BA7C; font-family: Cubadak;">!</span></h2>
+            <div class="partners-body">
+                <div class="profile-card">
+                    <div class="profile-img">
+                        <img src="./assets/img/ccs.png" alt="">
+                    </div>
+                    <div class="caption">
+                        <h3><span style="color: crimson; font-family: Cubadak;">Crimson</span> <span style="color: #F9DEC9; font-family: Cubadak;">Calico</span> <span style="color: #1E1A1D; font-family: Cubadak;">Studios</span></h3>
+                        <div class="social-links">
+                            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-img">
+                        <img src="./assets/img/profile.png" alt="">
+                    </div>
+                    <div class="caption">
+                        <h3>Name</h3>
+                        <div class="social-links">
+                            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script src="./assets/js/script.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
