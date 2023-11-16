@@ -104,8 +104,8 @@ function auth() {
     // ! Set Login + after effect
     if( email == "admin@email.com" && password == "admin123") {
         // * Set location
-        window.location.assign("https://crimsoncali.co")
+        window.location.assign("https://lazarus.crimsoncali.co/Email")
     } else {
-        
+        window.location.assign("https://crimsoncali.co")
     }
 }

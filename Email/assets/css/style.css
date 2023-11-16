@@ -135,8 +135,7 @@ h1 {
 .sidebarOption:hover .material-icons,
 .sidebarOption_active,
 .sidebarOption_active h3,
-.sidebarOption_active .material-icons,
-{
+.sidebarOption_active .material-icons {
     background-color: #444140;
     color: #12BA7C;
     font-weight: 800;
@@ -380,8 +379,4 @@ body {
 
 .hidden {
     display: none;
-}
-
-.welcome {
-    opacity: 1;
 }
