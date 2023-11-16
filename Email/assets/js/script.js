@@ -1,4 +1,4 @@
-// TODO: Disable search bar due to "Server Down" change social and promotion categories, make categories work.
+// TODO: Disable search bar due to "Server Down". sort out category specific emails
 
 // * Constants
 // select alls
@@ -6,6 +6,7 @@ const email = document.querySelectorAll('.emailRow');
 const emailBody = document.querySelectorAll('.emailPage')
 const important = document.querySelectorAll('.important'); 
 const starred = document.querySelectorAll('.starred'); 
+const sent = document.querySelectorAll('.sent')
 
 const welcome = document.querySelector('.welcome');
 const emails = document.querySelector('.emailList_list');
@@ -21,11 +22,17 @@ const sideDerafts = document.querySelector('.sidebarDrafts')
 const sideSent = document.querySelector('.sidebarSent')
 const sideSnoozed = document.querySelector('.sidebarSnoozed')
 
+//top sections
+const primary = document.querySelector('.primary')
+const updates = document.querySelector('.updates')
+const server = document.querySelector('.server')
+
 // * Arrays
 const emailArray = [];
 const importantArray = [];
 const starredArray = [];
 const emailbodies = [];
+const sentArray = [];
 
 // * Setup Arrays
 email.forEach(function () {
@@ -43,6 +50,20 @@ starred.forEach(function () {
 emailBody.forEach(function () {
     emailbodies.push(emailBody)
 })
+
+sent.forEach(function () {
+    sentArray.push(sent)
+})
+
+// ! Hide specific emails from start
+
+function begin_hidden() {
+    sentArray.forEach.call(sent, function(sl) {
+        sl.classList.add("hidden");
+    });
+}
+
+begin_hidden();
 
 // * Email opens
 
@@ -79,6 +100,9 @@ sideImportant.addEventListener("click", () => {
     sideSnoozed.classList.remove('sidebarOption_active')
     sideSent.classList.remove('sidebarOption_active')
     sideDerafts.classList.remove('sidebarOption_active')
+    sentArray.forEach.call(sent, function(sl) {
+        sl.classList.add("hidden");
+    });
 })
 
 inbox.addEventListener("click", () => {
@@ -96,6 +120,9 @@ inbox.addEventListener("click", () => {
     sideSnoozed.classList.remove('sidebarOption_active')
     sideSent.classList.remove('sidebarOption_active')
     sideDerafts.classList.remove('sidebarOption_active')
+    sentArray.forEach.call(sent, function(sl) {
+        sl.classList.add("hidden");
+    });
 })
 
 sideStarred.addEventListener("click", () => {
@@ -116,6 +143,9 @@ sideStarred.addEventListener("click", () => {
     sideSnoozed.classList.remove('sidebarOption_active')
     sideSent.classList.remove('sidebarOption_active')
     sideDerafts.classList.remove('sidebarOption_active')
+    sentArray.forEach.call(sent, function(sl) {
+        sl.classList.add("hidden");
+    });
 })
 
 sideSnoozed.addEventListener("click", () => {
@@ -132,6 +162,9 @@ sideSnoozed.addEventListener("click", () => {
     emailListSettings.classList.remove("hidden")
     emailbodies.forEach.call(emailBody, function(o) {
         o.classList.add("hidden");
+    });
+    sentArray.forEach.call(sent, function(sl) {
+        sl.classList.add("hidden");
     });
 })
 
@@ -150,6 +183,9 @@ sideSent.addEventListener("click", () => {
     sideSnoozed.classList.remove('sidebarOption_active')
     sideSent.classList.add('sidebarOption_active')
     sideDerafts.classList.remove('sidebarOption_active')
+    sentArray.forEach.call(sent, function(sl) {
+        sl.classList.remove("hidden");
+    });
 })
 
 sideDerafts.addEventListener("click", () => {
@@ -167,4 +203,35 @@ sideDerafts.addEventListener("click", () => {
     sideSnoozed.classList.remove('sidebarOption_active')
     sideSent.classList.remove('sidebarOption_active')
     sideDerafts.classList.add('sidebarOption_active')
+    sentArray.forEach.call(sent, function(sl) {
+        sl.classList.add("hidden");
+    });
+})
+
+
+primary.addEventListener("click", () => {
+    primary.classList.add("section_selected")
+    updates.classList.remove("section_selected")
+    server.classList.remove("section_selected")
+    sentArray.forEach.call(sent, function(sl) {
+        sl.classList.add("hidden");
+    });
+})
+
+updates.addEventListener("click", () => {
+    primary.classList.remove("section_selected")
+    updates.classList.add("section_selected")
+    server.classList.remove("section_selected")
+    sentArray.forEach.call(sent, function(sl) {
+        sl.classList.add("hidden");
+    });
+})
+
+server.addEventListener("click", () => {
+    primary.classList.remove("section_selected")
+    updates.classList.remove("section_selected")
+    server.classList.add("section_selected")
+    sentArray.forEach.call(sent, function(sl) {
+        sl.classList.add("hidden");
+    });
 })

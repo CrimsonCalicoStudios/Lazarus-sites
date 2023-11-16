@@ -271,7 +271,7 @@ header {
 .btn-reg {
     width: 100%;
     height: 45px;
-    background: rgb(119, 0, 0);
+    background: rgba(119, 0, 0, .5);
     border: none;
     outline: none;
     border-radius: 6px;

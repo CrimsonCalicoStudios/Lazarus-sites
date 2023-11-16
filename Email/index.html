@@ -36,7 +36,7 @@
     <div class="main_body">
         <!-- Sidebar Starts -->
         <div class="sidebar">
-            <buttton class="sidebar_compose"><span class="material-icons">add</span>compose</buttton>
+            <buttton class="sidebar_compose" title="Servers Currently Unavailable"><span class="material-icons">add</span><s>compose</s></buttton>
             <div class="sidebarOption sidebarOption_active sidebarInbox">
                 <span class="material-icons">inbox</span>
                 <h3>Inbox</h3>
@@ -85,17 +85,17 @@
             <!-- Settings Ends -->
             <!-- Section Starts -->
         <div class="emailList_sections">
-            <div class="section section_selected">
+            <div class="section primary section_selected">
                 <span class="material-icons "> inbox </span>
                 <h4>Primary</h4>
             </div>
-            <div class="section ">
-                <span class="material-icons"> people </span>
-                <h4>Social</h4>
+            <div class="section updates">
+                <span class="material-icons"> error </span>
+                <h4>Updates</h4>
             </div>
-            <div class="section ">
-                <span class="material-icons"> local_offer </span>
-                <h4>Promotions</h4>
+            <div class="section server">
+                <span class="material-icons"> dns </span>
+                <h4>Server</h4>
             </div>
         </div>
         <!-- Section Ends-->
@@ -117,12 +117,12 @@
                 </div>
 
             </div>
-            <div class="emailRow">
+            <div class="emailRow sent">
                 <div class="emailRow_options">
                     <span class="material-icons"> star_border </span>
                     <span class="material-icons"> label_important </span>
                 </div>
-                <h3 class="emailRow_title">Title</h3>
+                <h3 class="emailRow_title">hidden</h3>
 
                 <div class="emailRow_message">
                     <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <span class="emailRow_desc">
