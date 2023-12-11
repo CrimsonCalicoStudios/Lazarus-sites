@@ -9,8 +9,10 @@ const starred = document.querySelectorAll('.starred');
 const sent = document.querySelectorAll('.sent')
 
 const welcome = document.querySelector('.welcome');
+const system_error = document.querySelector('.system_error');
 const emails = document.querySelector('.emailList_list');
 const welcome_email = document.querySelector('.welcome_email');
+const system_error_email = document.querySelector('.system_error_email');
 
 // sections
 const inbox = document.querySelector('.sidebarInbox');
@@ -27,12 +29,20 @@ const primary = document.querySelector('.primary')
 const updates = document.querySelector('.updates')
 const server = document.querySelector('.server')
 
+const server_mail = document.querySelectorAll('.sever_mail')
+const primary_mail = document.querySelectorAll('.primary_mail')
+const updates_mail = document.querySelectorAll('.updates_mail')
+
+
 // * Arrays
 const emailArray = [];
 const importantArray = [];
 const starredArray = [];
 const emailbodies = [];
 const sentArray = [];
+const primaryArray = [];
+const updatesArray = [];
+const serverArray = [];
 
 // * Setup Arrays
 email.forEach(function () {
@@ -55,6 +65,18 @@ sent.forEach(function () {
     sentArray.push(sent)
 })
 
+server_mail.forEach(function () {
+    serverArray.push(server_mail)
+})
+
+updates_mail.forEach(function () {
+    updatesArray.push(updates_mail)
+})
+
+primary_mail.forEach(function () {
+    primaryArray.push(primary_mail)
+})
+
 // ! Hide specific emails from start
 
 function begin_hidden() {
@@ -70,6 +92,15 @@ begin_hidden();
 email.forEach(function toggle() {
     welcome.addEventListener("click", () => {
         welcome_email.classList.remove('hidden')
+        emailArray.forEach.call(email, function(el) {
+            el.classList.add("hidden");
+        });
+        sections.classList.add('hidden')
+        emailListSettings.classList.add("hidden")
+    })
+
+    system_error.addEventListener("click", () => {
+        system_error_email.classList.remove('hidden')
         emailArray.forEach.call(email, function(el) {
             el.classList.add("hidden");
         });
@@ -210,28 +241,55 @@ sideDerafts.addEventListener("click", () => {
 
 
 primary.addEventListener("click", () => {
+    emailArray.forEach.call(email, function(el) {
+        el.classList.add("hidden");
+    });
     primary.classList.add("section_selected")
     updates.classList.remove("section_selected")
     server.classList.remove("section_selected")
-    sentArray.forEach.call(sent, function(sl) {
-        sl.classList.add("hidden");
+    primaryArray.forEach.call(primary_mail, function(pl) {
+        pl.classList.remove("hidden");
+    });
+    updatesArray.forEach.call(updates_mail, function(ul) {
+        ul.classList.add("hidden");
+    });
+    serverArray.forEach.call(server_mail, function(serl) {
+        serl.classList.add("hidden");
     });
 })
 
 updates.addEventListener("click", () => {
+    emailArray.forEach.call(email, function(el) {
+        el.classList.add("hidden");
+    });
     primary.classList.remove("section_selected")
     updates.classList.add("section_selected")
     server.classList.remove("section_selected")
-    sentArray.forEach.call(sent, function(sl) {
-        sl.classList.add("hidden");
+    primaryArray.forEach.call(primary_mail, function(pl) {
+        pl.classList.add("hidden");
+    });
+    updatesArray.forEach.call(updates_mail, function(ul) {
+        ul.classList.remove("hidden");
+    });
+    serverArray.forEach.call(server_mail, function(serl) {
+        serl.classList.add("hidden");
     });
 })
 
 server.addEventListener("click", () => {
+    emailArray.forEach.call(email, function(el) {
+        el.classList.add("hidden");
+    });
     primary.classList.remove("section_selected")
     updates.classList.remove("section_selected")
     server.classList.add("section_selected")
-    sentArray.forEach.call(sent, function(sl) {
-        sl.classList.add("hidden");
+    primaryArray.forEach.call(primary_mail, function(pl) {
+        pl.classList.add("hidden");
+    });
+    updatesArray.forEach.call(updates_mail, function(ul) {
+        ul.classList.add("hidden");
+    });
+    serverArray.forEach.call(server_mail, function(serl) {
+        serl.classList.remove("hidden");
     });
 })
