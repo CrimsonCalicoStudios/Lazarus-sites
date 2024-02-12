@@ -13,6 +13,8 @@ const system_error = document.querySelector('.system_error');
 const emails = document.querySelector('.emailList_list');
 const welcome_email = document.querySelector('.welcome_email');
 const system_error_email = document.querySelector('.system_error_email');
+const glitched = document.querySelector('.glitched');
+const glitched_email = document.querySelector('.glitched_email');
 
 // sections
 const inbox = document.querySelector('.sidebarInbox');
@@ -101,6 +103,15 @@ email.forEach(function toggle() {
 
     system_error.addEventListener("click", () => {
         system_error_email.classList.remove('hidden')
+        emailArray.forEach.call(email, function(el) {
+            el.classList.add("hidden");
+        });
+        sections.classList.add('hidden')
+        emailListSettings.classList.add("hidden")
+    })
+
+    glitched.addEventListener("click", () => {
+        glitched_email.classList.remove('hidden')
         emailArray.forEach.call(email, function(el) {
             el.classList.add("hidden");
         });

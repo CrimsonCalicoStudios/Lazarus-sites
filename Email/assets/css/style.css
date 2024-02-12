@@ -8,6 +8,11 @@
     src: url(../fonts/Cubadak.ttf);
 }
 
+@font-face {
+    font-family: babymoto;
+    src: url(../fonts/babymoto_2019-04-13.otf);
+}
+
 p {
     font-family: Cubadak;
 }
@@ -379,4 +384,9 @@ body {
 
 .hidden {
     display: none;
+}
+
+.delta {
+    font-family: babymoto;
+    color: #25261e5a;
 }
