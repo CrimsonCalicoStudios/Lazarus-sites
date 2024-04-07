@@ -1,18 +1,36 @@
 // TODO: Disable search bar due to "Server Down". sort out category specific emails
 
+const targetEL = document.querySelector('.emailList_list');
+
+const loadSnippet = number => {
+    fetch(`./assets/Emails/${number}_email.html`).then(res => {
+        if(res.ok) {
+            return res.text();
+        }
+    }).then(htmlSnippet => {
+        targetEL.innerHTML = htmlSnippet;
+    });
+};
+
 // * Constants
 // select alls
 const email = document.querySelectorAll('.emailRow'); 
-const emailBody = document.querySelectorAll('.emailPage')
+const emailBody = document.querySelectorAll('.emailPage');
 const important = document.querySelectorAll('.important'); 
 const starred = document.querySelectorAll('.starred'); 
-const sent = document.querySelectorAll('.sent')
+const sent = document.querySelectorAll('.sent');
 
 const welcome = document.querySelector('.welcome');
 const system_error = document.querySelector('.system_error');
 const emails = document.querySelector('.emailList_list');
 const welcome_email = document.querySelector('.welcome_email');
 const system_error_email = document.querySelector('.system_error_email');
+const glitched = document.querySelector('.glitched');
+const glitched_email = document.querySelector('.glitched_email');
+const idea = document.querySelector('.idea');
+const idea_email = document.querySelector('.idea_email');
+const tasks = document.querySelector('.tasks');
+const tasks_email = document.querySelector('.tasks_email');
 
 // sections
 const inbox = document.querySelector('.sidebarInbox');
@@ -91,7 +109,7 @@ begin_hidden();
 
 email.forEach(function toggle() {
     welcome.addEventListener("click", () => {
-        welcome_email.classList.remove('hidden')
+        loadSnippet(1)
         emailArray.forEach.call(email, function(el) {
             el.classList.add("hidden");
         });
@@ -100,7 +118,34 @@ email.forEach(function toggle() {
     })
 
     system_error.addEventListener("click", () => {
-        system_error_email.classList.remove('hidden')
+        loadSnippet(2)
+        emailArray.forEach.call(email, function(el) {
+            el.classList.add("hidden");
+        });
+        sections.classList.add('hidden')
+        emailListSettings.classList.add("hidden")
+    })
+
+    glitched.addEventListener("click", () => {
+        loadSnippet(3)
+        emailArray.forEach.call(email, function(el) {
+            el.classList.add("hidden");
+        });
+        sections.classList.add('hidden')
+        emailListSettings.classList.add("hidden")
+    })
+
+    idea.addEventListener("click", () => {
+        loadSnippet(4)
+        emailArray.forEach.call(email, function(el) {
+            el.classList.add("hidden");
+        });
+        sections.classList.add('hidden')
+        emailListSettings.classList.add("hidden")
+    })
+
+    tasks.addEventListener("click", () => {
+        loadSnippet(5)
         emailArray.forEach.call(email, function(el) {
             el.classList.add("hidden");
         });

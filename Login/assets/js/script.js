@@ -102,10 +102,13 @@ function auth() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     // ! Set Login + after effect
-    if( email == "admin@email.com" && password == "admin123") {
+    if( email == "sam@edensgate.co.uk" && password == "Password123") {
         // * Set location
-        window.location.assign("https://lazarus.crimsoncali.co/Email")
+        alert("yes")
+        window.location.set('./test.html')
+        
     } else {
-        window.location.assign("https://crimsoncali.co")
+        alert("no")
+        window.location.replace('../../../Email/email_test.html')
     }
 }
